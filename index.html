@@ -438,16 +438,20 @@ input {
 /* БЛОКНОТ ВЕДУЧОГО */
 .notes-toggle {
     position: fixed;
-    right: 10px;
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: 10px;
+    top: calc(10px + env(safe-area-inset-top));
     z-index: 1000;
-    width: auto;
-    padding: 10px 12px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
     margin: 0;
-    border-radius: 10px;
-    font-size: 13px;
-    background: #3d1627;
-    border: 1px solid #e58cb5;
+    border-radius: 50%;
+    font-size: 18px;
+    background: rgba(61, 22, 39, 0.55);
+    border: 1px solid rgba(229, 140, 181, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .notes-overlay {
@@ -557,7 +561,7 @@ input {
     </div>
 
     <!-- БЛОКНОТ ВЕДУЧОГО -->
-    <button id="notesToggle" class="notes-toggle" onclick="openNotes()">📝 НОТАТКИ</button>
+    <button id="notesToggle" class="notes-toggle" onclick="openNotes()" aria-label="Нотатки">📝</button>
 
     <div id="notesOverlay" class="notes-overlay" onclick="closeNotesOnOverlay(event)">
         <div class="notes-panel">
