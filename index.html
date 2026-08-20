@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>⚔️ КОЗАКИ-ХАРАКТЕРНИКИ ⚔️</title>
+<title>КОЗАКИ-ХАРАКТЕРНИКИ</title>
 
 <!-- НАЛАШТУВАННЯ PWA ДЛЯ IPHONE ТА ANDROID -->
 <link rel="manifest" href="manifest.json">
@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Характерники">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta name="theme-color" content="#1b1009">
+<meta name="theme-color" content="#1a0b2e">
 
 <style>
 /* ОСНОВНІ СТИЛІ */
@@ -32,8 +32,8 @@ input {
 body {
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
-    color: #f5e6c8;
-    background: radial-gradient(circle at top, #70451f, #28170b 48%, #0d0704);
+    color: #e2d4f8;
+    background: radial-gradient(circle at top, #2d124d, #140726 48%, #090214);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,18 +46,18 @@ body {
     width: 100%;
     max-width: 520px;
     min-height: 650px;
-    background: #1b1009;
-    border: 2px solid #d6a84f;
+    background: #130722;
+    border: 2px solid #8a5cf5;
     border-radius: 22px;
-    box-shadow: 0 20px 60px #000;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(138, 92, 245, 0.2);
     overflow: hidden;
 }
 
 .header {
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #8c672f;
-    color: #f0cd7b;
+    border-bottom: 1px solid #5b32a8;
+    color: #d1b3ff;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -76,23 +76,19 @@ body {
     padding: 55px 10px 30px;
 }
 
-.logo-icon {
-    font-size: 80px;
-}
-
 h1 {
-    color: #f0cd7b;
+    color: #d1b3ff;
     font-size: 38px;
     margin: 15px 0;
 }
 
 .subtitle {
-    color: #c8aa72;
+    color: #bca0eb;
     line-height: 1.6;
 }
 
 .ornament {
-    color: #d6a84f;
+    color: #8a5cf5;
     text-align: center;
     margin: 20px 0;
     font-size: 22px;
@@ -103,14 +99,14 @@ button {
     padding: 15px;
     margin-top: 12px;
     border-radius: 12px;
-    border: 1px solid #d6a84f;
-    background: linear-gradient(#865027, #512a15);
-    color: #ffe8ad;
+    border: 1px solid #8a5cf5;
+    background: linear-gradient(#5a25ad, #331169);
+    color: #f1e8ff;
     font-family: inherit;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: transform 0.1s, background 0.2s;
 }
 
 button:active {
@@ -118,16 +114,18 @@ button:active {
 }
 
 button.secondary {
-    background: #302015;
+    background: #251240;
+    border-color: #5b32a8;
 }
 
 button.red {
     background: linear-gradient(#9b3636, #5e1d1d);
+    border-color: #ff6b6b;
 }
 
 .title {
     text-align: center;
-    color: #f0cd7b;
+    color: #d1b3ff;
     font-size: 28px;
     margin-bottom: 25px;
 }
@@ -151,14 +149,14 @@ button.red {
 .number {
     font-size: 50px;
     font-weight: bold;
-    color: #f0cd7b;
+    color: #d1b3ff;
     min-width: 70px;
     text-align: center;
 }
 
 .info {
     text-align: center;
-    color: #c8aa72;
+    color: #bca0eb;
     margin-bottom: 15px;
 }
 
@@ -180,8 +178,8 @@ button.red {
     align-items: center;
     gap: 10px;
     padding: 12px;
-    background: #291910;
-    border: 1px solid #72502d;
+    background: #1f0b38;
+    border: 1px solid #5b32a8;
     border-radius: 13px;
 }
 
@@ -190,12 +188,6 @@ button.red {
     align-items: center;
     gap: 10px;
     flex: 1;
-}
-
-.role-icon {
-    font-size: 30px;
-    width: 40px;
-    text-align: center;
 }
 
 .role-name {
@@ -223,21 +215,21 @@ button.red {
     text-align: center;
     font-size: 21px;
     font-weight: bold;
-    color: #f0cd7b;
+    color: #d1b3ff;
 }
 
 .total-box {
     margin-top: 20px;
     padding: 15px;
     text-align: center;
-    background: #35200f;
-    border: 1px solid #d6a84f;
+    background: #280e4a;
+    border: 1px solid #8a5cf5;
     border-radius: 12px;
 }
 
 .total-number {
     font-size: 25px;
-    color: #f0cd7b;
+    color: #d1b3ff;
     font-weight: bold;
 }
 
@@ -246,8 +238,8 @@ input {
     width: 100%;
     padding: 14px;
     margin-bottom: 10px;
-    background: #140c07;
-    border: 1px solid #72502d;
+    background: #0d0417;
+    border: 1px solid #5b32a8;
     border-radius: 10px;
     color: white;
     font-size: 16px;
@@ -261,14 +253,14 @@ input {
 }
 
 .player-number {
-    color: #d6a84f;
+    color: #8a5cf5;
     font-weight: bold;
 }
 
-/* КАРТКА */
+/* КАРТКА ПОЛНОГО РАЗМЕРА 9:16 */
 .progress {
     height: 7px;
-    background: #382719;
+    background: #251240;
     border-radius: 20px;
     overflow: hidden;
     margin: 15px 0 25px;
@@ -277,14 +269,16 @@ input {
 .progress-bar {
     height: 100%;
     width: 0;
-    background: #d6a84f;
+    background: #8a5cf5;
     transition: .3s;
 }
 
 .card {
     width: 100%;
-    height: 320px;
-    border: 2px solid #d6a84f;
+    max-width: 340px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto 15px;
+    border: 2px solid #8a5cf5;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
@@ -293,52 +287,49 @@ input {
     flex-direction: column;
     justify-content: flex-end;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .card-text-bg {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(19, 7, 34, 0.85);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(138, 92, 245, 0.4);
     padding: 12px;
     border-radius: 10px;
     text-align: center;
 }
 
 .card-title {
-    font-size: 28px;
-    color: #f0cd7b;
+    font-size: 24px;
+    color: #d1b3ff;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .card-description {
-    color: #e4cda1;
+    color: #e2d4f8;
     line-height: 1.4;
     font-size: 14px;
 }
 
 /* ФАЗИ ГРИ */
-.phase-icon {
-    text-align: center;
-    font-size: 75px;
-    margin: 20px 0;
-}
-
 .phase-title {
     text-align: center;
     font-size: 38px;
-    color: #f0cd7b;
+    color: #d1b3ff;
+    margin-top: 20px;
 }
 
 .phase-text {
     text-align: center;
-    color: #dfc79b;
+    color: #bca0eb;
     line-height: 1.7;
     margin: 25px 0;
 }
 
 .action {
-    background: #291910;
-    border: 1px solid #72502d;
+    background: #1f0b38;
+    border: 1px solid #5b32a8;
     border-radius: 15px;
     padding: 20px;
     text-align: center;
@@ -346,12 +337,12 @@ input {
 }
 
 .action h3 {
-    color: #f0cd7b;
+    color: #d1b3ff;
     margin-bottom: 10px;
 }
 
 .action p {
-    color: #c8aa72;
+    color: #bca0eb;
     line-height: 1.6;
 }
 
@@ -363,9 +354,9 @@ input {
     gap: 8px;
     padding: 12px;
     margin-bottom: 8px;
-    border: 1px solid #634525;
+    border: 1px solid #5b32a8;
     border-radius: 10px;
-    background: #26170e;
+    background: #1f0b38;
 }
 
 .vote button {
@@ -396,26 +387,25 @@ input {
 <div class="game">
 
     <div class="header">
-    ⚔️ КОЗАКИ-ХАРАКТЕРНИКИ ⚔️
+        КОЗАКИ-ХАРАКТЕРНИКИ
     </div>
 
     <!-- ГОЛОВНИЙ ЕКРАН -->
     <section id="home" class="screen active">
         <div class="logo">
-            <div class="logo-icon">⚔️</div>
             <h1>Козаки-<br>Характерники</h1>
-            <div class="ornament">⚜ ━━━━━ ⚜</div>
+            <div class="ornament">━━━</div>
             <div class="subtitle">
                 Вітаю, шановне панство!<br>
                 Готові розпочати таємну гру?
             </div>
         </div>
-        <button onclick="showPlayers()">⚔️ ПОЇХАЛИ</button>
+        <button onclick="showPlayers()">ПОЇХАЛИ</button>
     </section>
 
     <!-- КІЛЬКІСТЬ ГРАВЦІВ -->
     <section id="players" class="screen">
-        <div class="title">👥 Кількість козаків</div>
+        <div class="title">Кількість козаків</div>
         <div class="info">Вкажіть кількість гравців</div>
         <div class="counter">
             <button onclick="changePlayers(-1)">−</button>
@@ -427,7 +417,7 @@ input {
 
     <!-- ВИБІР РОЛЕЙ -->
     <section id="roles" class="screen">
-        <div class="title">🎴 Виберіть ролі</div>
+        <div class="title">Виберіть ролі</div>
         <div class="info">Встановіть кількість кожної ролі</div>
         <div id="roleList" class="role-list"></div>
         <div class="total-box">
@@ -440,15 +430,15 @@ input {
 
     <!-- ІМЕНА -->
     <section id="names" class="screen">
-        <div class="title">✍️ Назви гравців</div>
+        <div class="title">Назви гравців</div>
         <div class="info">Введіть імена козаків</div>
         <div id="namesList"></div>
-        <button onclick="startDeal()">🎴 РОЗДАТИ КАРТИ</button>
+        <button onclick="startDeal()">РОЗДАТИ КАРТИ</button>
     </section>
 
     <!-- РОЗДАЧА -->
     <section id="deal" class="screen">
-        <div class="title">🎴 Таємна карта</div>
+        <div class="title">Таємна карта</div>
         <div id="dealPlayer" class="info"></div>
         <div class="progress">
             <div id="progressBar" class="progress-bar"></div>
@@ -471,26 +461,24 @@ input {
             </div>
         </div>
 
-        <button id="showButton" onclick="showRole()">👁️ ПОКАЗАТИ КАРТУ</button>
-        <button id="hideButton" class="secondary hidden" onclick="hideRole()">🔒 СХОВАТИ КАРТУ</button>
+        <button id="showButton" onclick="showRole()">ПОКАЗАТИ КАРТУ</button>
+        <button id="hideButton" class="secondary hidden" onclick="hideRole()">СХОВАТИ КАРТУ</button>
         <button id="nextButton" class="hidden" onclick="nextPlayer()">ПЕРЕДАТИ НАСТУПНОМУ →</button>
     </section>
 
     <!-- ПОЧАТОК ГРИ -->
     <section id="startGame" class="screen">
-        <div class="phase-icon">🕯️</div>
         <div class="phase-title">Гра починається</div>
-        <div class="ornament">⚜ ━━━ ⚜</div>
+        <div class="ornament">━━━</div>
         <div class="phase-text">
             Усі гравці отримали свої ролі.<br><br>
             Тепер телефон залишається у ведучого.
         </div>
-        <button onclick="startNight()">🌙 ПОЧАТИ НІЧ</button>
+        <button onclick="startNight()">ПОЧАТИ НІЧ</button>
     </section>
 
     <!-- НІЧ -->
     <section id="night" class="screen">
-        <div class="phase-icon">🌙</div>
         <div class="phase-title">НІЧ</div>
         <div id="nightNumber" class="info">Ніч 1</div>
         <div id="nightAction" class="action"></div>
@@ -499,19 +487,17 @@ input {
 
     <!-- РАНОК -->
     <section id="morning" class="screen">
-        <div class="phase-icon">☀️</div>
         <div class="phase-title">РАНОК</div>
         <div id="morningNumber" class="info"></div>
         <div class="phase-text">
             Ніч завершилася.<br><br>
             Ведучий оголошує події ночі.
         </div>
-        <button onclick="startDiscussion()">🗣️ ОБГОВОРЕННЯ</button>
+        <button onclick="startDiscussion()">ОБГОВОРЕННЯ</button>
     </section>
 
     <!-- ОБГОВОРЕННЯ -->
     <section id="discussion" class="screen">
-        <div class="phase-icon">🗣️</div>
         <div class="phase-title">ОБГОВОРЕННЯ</div>
         <div id="discussionNumber" class="info"></div>
         <div class="phase-text">
@@ -519,12 +505,11 @@ input {
             підозрюють один одного та
             намагаються знайти Козаків-характерників.
         </div>
-        <button onclick="startVoting()">🗳️ ГОЛОСУВАННЯ</button>
+        <button onclick="startVoting()">ГОЛОСУВАННЯ</button>
     </section>
 
     <!-- ГОЛОСУВАННЯ -->
     <section id="voting" class="screen">
-        <div class="phase-icon">🗳️</div>
         <div class="phase-title">ГОЛОСУВАННЯ</div>
         <div id="votingNumber" class="info"></div>
         <div class="phase-text">Кого громада вирішила вигнати?</div>
@@ -533,10 +518,9 @@ input {
 
     <!-- КІНЕЦЬ -->
     <section id="end" class="screen">
-        <div class="phase-icon">🏆</div>
         <div id="winnerTitle" class="phase-title">Перемога!</div>
         <div id="winnerText" class="phase-text"></div>
-        <button onclick="newGame()">🔄 НОВА ГРА</button>
+        <button onclick="newGame()">НОВА ГРА</button>
     </section>
 
 </div>
@@ -553,55 +537,46 @@ let nightStep = 0;
 const roles = {
     peasant: {
         name: "Селянин",
-        icon: "🌾",
         image: "img/peasant.jpg",
         description: "Ви — мирний житель. Допоможіть громаді знайти Козаків-характерників."
     },
     cossack: {
         name: "Козак",
-        icon: "⚔️",
         image: "img/cossack.jpg",
         description: "Ви — комісар. Вночі можете перевірити одного гравця."
     },
     molfar: {
         name: "Мольфар",
-        icon: "🧙",
         image: "img/molfar.jpg",
         description: "Ви — лікар. Вночі можете врятувати одного гравця."
     },
     characternik: {
         name: "Козак-характерник",
-        icon: "🧿",
         image: "img/characternik.jpg",
         description: "Ви — Козак-характерник. Вночі обирайте жертву. Ваша мета — позбутися мирних жителів та отримати більшість."
     },
     homeless: {
         name: "Безхатько",
-        icon: "🏚️",
         image: "img/homeless.jpg",
         description: "Ви приходите в гості до одного гравця та блокуєте його здатність цієї ночі."
     },
     scary: {
         name: "Страшко",
-        icon: "😈",
         image: "img/strashko.jpg",
         description: "Ви — маніяк. Вночі можете обрати будь-якого гравця."
     },
     hetman: {
         name: "Гетьман",
-        icon: "👑",
         image: "img/hetman.jpg",
         description: "Ви — головний мирний житель. Тримайте громаду разом та не допускайте конфліктів."
     },
     priest: {
         name: "Священик",
-        icon: "✝️",
         image: "img/priest.jpg",
         description: "Ви можете дати імунітет від Козака-характерника. Здібність доступна раз на два кола."
     },
     mavka: {
         name: "Мавка",
-        icon: "🌿",
         image: "img/mavka.jpg",
         description: "Ваша мета — зробити так, щоб під час голосування всі подумали, що ви Козак-характерник, і вигнали вас."
     }
@@ -643,7 +618,6 @@ function createRoleList() {
         row.className = "role-row";
         row.innerHTML = `
             <div class="role-info">
-                <div class="role-icon">${role.icon}</div>
                 <div class="role-name">${role.name}</div>
             </div>
             <div class="role-controls">
@@ -751,7 +725,7 @@ function prepareCard() {
     document.getElementById("hideButton").classList.add("hidden");
     document.getElementById("nextButton").classList.add("hidden");
 
-    document.getElementById("nextButton").textContent = currentPlayer === playerCount - 1 ? "⚔️ ПОЧАТИ ГРУ" : "ПЕРЕДАТИ НАСТУПНОМУ →";
+    document.getElementById("nextButton").textContent = currentPlayer === playerCount - 1 ? "ПОЧАТИ ГРУ" : "ПЕРЕДАТИ НАСТУПНОМУ →";
 }
 
 function showRole() {
@@ -809,11 +783,11 @@ function updateNight() {
 
     document.getElementById("nightNumber").textContent = "Ніч " + nightNumber;
     document.getElementById("nightAction").innerHTML = `
-        <h3>${role.icon} ${action.name}</h3>
+        <h3>${action.name}</h3>
         <p>${action.text}</p>
     `;
 
-    document.getElementById("nightButton").textContent = nightStep === nightActions.length - 1 ? "☀️ ЗУСТРІЧАЙМО РАНОК" : "ГОТОВО →";
+    document.getElementById("nightButton").textContent = nightStep === nightActions.length - 1 ? "ЗУСТРІЧАЙМО РАНОК" : "ГОТОВО →";
 }
 
 function nextNight() {
@@ -844,7 +818,7 @@ function startVoting() {
         if(!player.alive) return;
         list.innerHTML += `
             <div class="vote">
-                <span>👤 ${player.name}</span>
+                <span>${player.name}</span>
                 <button class="red" onclick="eliminate(${index})">ВИГНАТИ</button>
             </div>
         `;
@@ -871,22 +845,22 @@ function checkWinner() {
     let mavkaDead = players.some(player => player.role === "mavka" && !player.alive);
 
     if(mavkaDead) {
-        showEnd("🌿 МАВКА ПЕРЕМОГЛА!", "Мавка домоглася свого вигнання під час голосування.");
+        showEnd("МАВКА ПЕРЕМОГЛА!", "Мавка домоглася свого вигнання під час голосування.");
         return true;
     }
 
     if(characterknyky.length === 0 && scary.length === 0) {
-        showEnd("⚔️ КОЗАКИ ПЕРЕМОГЛИ!", "Усі Козаки-характерники та Страшко вибули з гри.");
+        showEnd("КОЗАКИ ПЕРЕМОГЛИ!", "Усі Козаки-характерники та Страшко вибули з гри.");
         return true;
     }
 
     if(characterknyky.length > 0 && characterknyky.length >= alive.length - characterknyky.length) {
-        showEnd("🧿 КОЗАКИ-ХАРАКТЕРНИКИ ПЕРЕМОГЛИ!", "Козаки-характерники отримали більшість.");
+        showEnd("КОЗАКИ-ХАРАКТЕРНИКИ ПЕРЕМОГЛИ!", "Козаки-характерники отримали більшість.");
         return true;
     }
 
     if(alive.length === 1 && scary.length === 1) {
-        showEnd("😈 СТРАШКО ПЕРЕМІГ!", "Страшко залишився останнім живим.");
+        showEnd("СТРАШКО ПЕРЕМІГ!", "Страшко залишився останнім живим.");
         return true;
     }
 
