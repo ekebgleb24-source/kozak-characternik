@@ -12,10 +12,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Козацька Мафія">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta name="theme-color" content="#2b101c">
+<meta name="theme-color" content="#210b15">
 
 <style>
-/* ОСНОВНІ СТИЛІ БЕЗ СКРОЛУ */
+/* ОСНОВНІ СТИЛІ БЕЗ СКРОЛУ ТА БЕЗ РАМОК І БІЛИХ ПЛЯМ */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,39 +26,45 @@
 }
 
 input {
-    font-size: 16px !important; /* Запобігає зуму на iOS */
+    font-size: 16px !important; /* Запобігає автоматичному зуму на iOS */
 }
 
 html, body {
     width: 100%;
     height: 100%;
-    height: 100dvh;
-    overflow: hidden; /* Повне блокування скролу */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Запрещає скролл всієї сторінки */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
     color: #fce8f3;
-    background: radial-gradient(circle at top, #4a1f33, #2b101c 48%, #15060d);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Убирає білу підкладку iOS */
+    background-color: #210b15 !important; 
 }
 
 .game {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    max-width: 480px;
     height: 100%;
-    height: 100dvh;
+    max-width: 480px;
+    margin: 0 auto;
     background: #210b15;
-    border: 2px solid #e58cb5;
+    border: none; /* Прибрано рожеву рамку */
     display: flex;
     flex-direction: column;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 140, 181, 0.25);
+    box-shadow: none;
     overflow: hidden;
+
+    /* Прижим до безпечних зон iPhone (Dynamic Island та системна полоска знизу) */
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
 }
 
 .header {
-    padding: 10px;
+    padding: 12px 10px;
     text-align: center;
     border-bottom: 1px solid #9e4b75;
     color: #f7c1da;
@@ -107,7 +113,7 @@ h1 {
 
 button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-top: 8px;
     border-radius: 12px;
     border: 1px solid #e58cb5;
@@ -184,7 +190,7 @@ button.red {
     flex-shrink: 0;
 }
 
-/* РОЛІ З ВНУТРІШНІМ СКРОЛОМ ТІЛЬКИ ДЛЯ СПИСКУ */
+/* РОЛІ */
 .role-list {
     display: flex;
     flex-direction: column;
@@ -290,7 +296,7 @@ input {
     font-size: 14px;
 }
 
-/* КАРТКА 9:16 АДАПТИВНА */
+/* КАРТКА */
 .progress {
     height: 5px;
     background: #3d1627;
@@ -312,7 +318,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 0; /* Дозволяє картці стискатися */
+    min-height: 0;
     margin-bottom: 10px;
 }
 
@@ -424,13 +430,6 @@ input {
 
 .hidden {
     display: none !important;
-}
-
-@media(max-width: 420px) {
-    .game {
-        border-radius: 0;
-        border: none;
-    }
 }
 </style>
 </head>
