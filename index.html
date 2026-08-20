@@ -1070,6 +1070,81 @@ function newGame() {
     nightStep = 0;
     showScreen("home");
 }
+
+/* БЛОКНОТ ВЕДУЧОГО */
+
+function openNotes() {
+    const overlay = document.getElementById("notesOverlay");
+    const textarea = document.getElementById("notesText");
+
+    if (!overlay) return;
+
+    overlay.classList.add("open");
+
+    setTimeout(() => {
+        if (textarea) textarea.focus();
+    }, 100);
+}
+
+function closeNotes() {
+    const overlay = document.getElementById("notesOverlay");
+    if (overlay) {
+        overlay.classList.remove("open");
+    }
+}
+
+function closeNotesOnOverlay(event) {
+    const overlay = document.getElementById("notesOverlay");
+
+    if (event.target === overlay) {
+        closeNotes();
+    }
+}
+
+function saveNotes() {
+    const textarea = document.getElementById("notesText");
+
+    if (textarea) {
+        localStorage.setItem(
+            "cossackMafiaNotes",
+            textarea.value
+        );
+    }
+}
+
+function loadNotes() {
+    const textarea = document.getElementById("notesText");
+
+    if (!textarea) return;
+
+    const saved =
+        localStorage.getItem("cossackMafiaNotes");
+
+    if (saved !== null) {
+        textarea.value = saved;
+    }
+}
+
+function clearNotes() {
+    if (confirm("Очистити всі нотатки ведучого?")) {
+        const textarea =
+            document.getElementById("notesText");
+
+        if (textarea) {
+            textarea.value = "";
+        }
+
+        localStorage.removeItem(
+            "cossackMafiaNotes"
+        );
+    }
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadNotes
+);
+
 </script>
 
 </body>
