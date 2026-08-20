@@ -26,7 +26,7 @@
 }
 
 input {
-    font-size: 16px !important; /* Запобігає автоматичному зуму на iOS */
+    font-size: 16px !important;
 }
 
 html, body {
@@ -34,11 +34,10 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Забороняє скролл всієї сторінки */
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
     color: #fce8f3;
-    /* Прибирає білу підкладку iOS */
-    background-color: #210b15 !important; 
+    background-color: #210b15 !important;
 }
 
 .game {
@@ -58,7 +57,6 @@ html, body {
     box-shadow: none;
     overflow: hidden;
 
-    /* Прижим до безпечних зон iPhone */
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
 }
@@ -324,8 +322,8 @@ input {
 
 .card {
     height: 100%;
-    max-height: 400px; /* Оптимальна висота для розміщення на мобільних екранах */
-    aspect-ratio: 5 / 7; /* ВСТАНОВЛЕНО ПРОПОРЦІЮ 5:7 */
+    max-height: 400px;
+    aspect-ratio: 5 / 7;
     border: 2px solid #e58cb5;
     border-radius: 16px;
     background-size: cover;
@@ -458,125 +456,231 @@ input {
     <section id="players" class="screen">
         <div class="title">Кількість козаків</div>
         <div class="info">Вкажіть кількість гравців</div>
+
         <div class="counter">
             <button onclick="changePlayers(-1)">−</button>
             <div id="playerNumber" class="number">8</div>
             <button onclick="changePlayers(1)">+</button>
         </div>
+
         <button onclick="showRoles()">ДАЛІ →</button>
     </section>
 
     <!-- ВИБІР РОЛЕЙ -->
     <section id="roles" class="screen">
         <div class="title">Виберіть ролі</div>
+
         <div id="roleList" class="role-list"></div>
+
         <div class="total-box">
             Всього ролей:
             <span id="totalRoles" class="total-number">0 / 8</span>
         </div>
+
         <div id="roleError" class="error"></div>
+
         <button onclick="showNames()">ДАЛІ →</button>
     </section>
 
     <!-- ІМЕНА -->
     <section id="names" class="screen">
         <div class="title">Назви гравців</div>
+
         <div id="namesList" class="names-container"></div>
+
         <button onclick="startDeal()">РОЗДАТИ КАРТИ</button>
     </section>
 
     <!-- РОЗДАЧА -->
     <section id="deal" class="screen">
+
         <div class="title">Таємна карта</div>
+
         <div id="dealPlayer" class="info"></div>
+
         <div class="progress">
             <div id="progressBar" class="progress-bar"></div>
         </div>
 
         <div class="card-container">
-            <div id="closedCard" class="card" style="background-image: url('img/card-back.jpg');">
+
+            <div id="closedCard"
+                 class="card"
+                 style="background-image: url('img/card-back.jpg');">
+
                 <div class="card-text-bg">
                     <div class="card-title">Таємна карта</div>
+
                     <div class="card-description">
                         Натисніть кнопку нижче.<br>
                         Переконайтеся, що ніхто не дивиться.
                     </div>
                 </div>
+
             </div>
 
             <div id="openCard" class="card hidden">
+
                 <div class="card-text-bg">
+
                     <div id="roleTitle" class="card-title"></div>
-                    <div id="roleDescription" class="card-description"></div>
+
+                    <div id="roleDescription"
+                         class="card-description"></div>
+
                 </div>
+
             </div>
+
         </div>
 
-        <button id="showButton" onclick="showRole()">ПОКАЗАТИ КАРТУ</button>
-        <button id="hideButton" class="secondary hidden" onclick="hideRole()">СХОВАТИ КАРТУ</button>
-        <button id="nextButton" class="hidden" onclick="nextPlayer()">ПЕРЕДАТИ НАСТУПНОМУ →</button>
+        <button id="showButton"
+                onclick="showRole()">
+            ПОКАЗАТИ КАРТУ
+        </button>
+
+        <button id="hideButton"
+                class="secondary hidden"
+                onclick="hideRole()">
+            СХОВАТИ КАРТУ
+        </button>
+
+        <button id="nextButton"
+                class="hidden"
+                onclick="nextPlayer()">
+            ПЕРЕДАТИ НАСТУПНОМУ →
+        </button>
+
     </section>
 
     <!-- ПОЧАТОК ГРИ -->
     <section id="startGame" class="screen">
-        <div class="phase-title">Гра починається</div>
-        <div class="ornament">━━━</div>
+
+        <div class="phase-title">
+            Гра починається
+        </div>
+
+        <div class="ornament">
+            ━━━
+        </div>
+
         <div class="phase-text">
             Усі гравці отримали свої ролі.<br><br>
             Тепер телефон залишається у ведучого.
         </div>
-        <button onclick="startNight()">ПОЧАТИ НІЧ</button>
+
+        <button onclick="startNight()">
+            ПОЧАТИ НІЧ
+        </button>
+
     </section>
 
     <!-- НІЧ -->
     <section id="night" class="screen">
-        <div class="phase-title">НІЧ</div>
-        <div id="nightNumber" class="info">Ніч 1</div>
-        <div id="nightAction" class="action"></div>
-        <button id="nightButton" onclick="nextNight()">ГОТОВО →</button>
+
+        <div class="phase-title">
+            НІЧ
+        </div>
+
+        <div id="nightNumber"
+             class="info">
+            Ніч 1
+        </div>
+
+        <div id="nightAction"
+             class="action"></div>
+
+        <button id="nightButton"
+                onclick="nextNight()">
+            ГОТОВО →
+        </button>
+
     </section>
 
     <!-- РАНОК -->
     <section id="morning" class="screen">
-        <div class="phase-title">РАНОК</div>
-        <div id="morningNumber" class="info"></div>
+
+        <div class="phase-title">
+            РАНОК
+        </div>
+
+        <div id="morningNumber"
+             class="info"></div>
+
         <div class="phase-text">
             Ніч завершилася.<br><br>
             Ведучий оголошує події ночі.
         </div>
-        <button onclick="startDiscussion()">ОБГОВОРЕННЯ</button>
+
+        <button onclick="startDiscussion()">
+            ОБГОВОРЕННЯ
+        </button>
+
     </section>
 
     <!-- ОБГОВОРЕННЯ -->
     <section id="discussion" class="screen">
-        <div class="phase-title">ОБГОВОРЕННЯ</div>
-        <div id="discussionNumber" class="info"></div>
+
+        <div class="phase-title">
+            ОБГОВОРЕННЯ
+        </div>
+
+        <div id="discussionNumber"
+             class="info"></div>
+
         <div class="phase-text">
             Козаки обговорюють події,
             підозрюють один одного та
             намагаються знайти Мафію.
         </div>
-        <button onclick="startVoting()">ГОЛОСУВАННЯ</button>
+
+        <button onclick="startVoting()">
+            ГОЛОСУВАННЯ
+        </button>
+
     </section>
 
     <!-- ГОЛОСУВАННЯ -->
     <section id="voting" class="screen">
-        <div class="phase-title">ГОЛОСУВАННЯ</div>
-        <div id="votingNumber" class="info"></div>
-        <div class="phase-text" style="margin: 5px 0;">Кого громада вирішила вигнати?</div>
-        <div id="votingList" class="voting-container"></div>
+
+        <div class="phase-title">
+            ГОЛОСУВАННЯ
+        </div>
+
+        <div id="votingNumber"
+             class="info"></div>
+
+        <div class="phase-text"
+             style="margin: 5px 0;">
+            Кого громада вирішила вигнати?
+        </div>
+
+        <div id="votingList"
+             class="voting-container"></div>
+
     </section>
 
     <!-- КІНЕЦЬ -->
     <section id="end" class="screen">
-        <div id="winnerTitle" class="phase-title">Перемога!</div>
-        <div id="winnerText" class="phase-text"></div>
-        <button onclick="newGame()">НОВА ГРА</button>
+
+        <div id="winnerTitle"
+             class="phase-title">
+            Перемога!
+        </div>
+
+        <div id="winnerText"
+             class="phase-text"></div>
+
+        <button onclick="newGame()">
+            НОВА ГРА
+        </button>
+
     </section>
 
 </div>
 
 <script>
+
 let playerCount = 8;
 let players = [];
 let roleCounts = {};
@@ -584,353 +688,857 @@ let currentPlayer = 0;
 let nightNumber = 1;
 let nightStep = 0;
 
+
 /* РОЛІ */
+
 const roles = {
+
     peasant: {
         name: "Селянин",
         image: "img/peasant.jpg",
-        description: "Ви — мирний житель. Допоможіть громаді знайти Мафію."
+        description:
+            "Ви — мирний житель. Допоможіть громаді знайти Мафію."
     },
+
     cossack: {
         name: "Козак",
         image: "img/cossack.jpg",
-        description: "Ви — комісар. Вночі можете перевірити одного гравця."
+        description:
+            "Ви — комісар. Вночі можете перевірити одного гравця."
     },
+
     molfar: {
         name: "Мольфар",
         image: "img/molfar.jpg",
-        description: "Ви — лікар. Вночі можете врятувати одного гравця."
+        description:
+            "Ви — лікар. Вночі можете врятувати одного гравця."
     },
+
     characternik: {
         name: "Козак-характерник",
         image: "img/characternik.jpg",
-        description: "Ви — Мафія. Вночі обирайте жертву. Ваша мета — позбутися мирних жителів та отримати більшість."
+        description:
+            "Ви — Мафія. Вночі обирайте жертву. Ваша мета — позбутися мирних жителів та отримати більшість."
     },
+
     homeless: {
         name: "Безхатько",
         image: "img/homeless.jpg",
-        description: "Ви приходите в гості до одного гравця та блокуєте його здатність цієї ночі."
+        description:
+            "Ви приходите в гості до одного гравця та блокуєте його здатність цієї ночі."
     },
+
     scary: {
         name: "Страшко",
         image: "img/strashko.jpg",
-        description: "Ви — маніяк. Вночі можете обрати будь-якого гравця."
+        description:
+            "Ви — маніяк. Вночі можете обрати будь-якого гравця."
     },
+
     hetman: {
         name: "Гетьман",
         image: "img/hetman.jpg",
-        description: "Ви — головний мирний житель. Тримайте громаду разом та не допускайте конфліктів."
+        description:
+            "Ви — головний мирний житель. Тримайте громаду разом та не допускайте конфліктів."
     },
+
     priest: {
         name: "Священик",
         image: "img/priest.jpg",
-        description: "Ви можете дати імунітет від Мафії. Здібність доступна раз на два кола."
+        description:
+            "Ви можете дати імунітет від Мафії. Здібність доступна раз на два кола."
     },
+
     mavka: {
         name: "Мавка",
         image: "img/mavka.jpg",
-        description: "Ваша мета — зробити так, щоб під час голосування всі подумали, що ви Мафія, і вигнали вас."
+        description:
+            "Ваша мета — зробити так, щоб під час голосування всі подумали, що ви Мафія, і вигнали вас."
     }
+
 };
 
+
 /* ПЕРЕМИКАННЯ ЕКРАНІВ */
+
 function showScreen(id) {
-    document.querySelectorAll(".screen").forEach(screen => {
-        screen.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+            screen.classList.remove("active");
+        });
+
+    document
+        .getElementById(id)
+        .classList.add("active");
 }
+
 
 function showPlayers() {
     showScreen("players");
 }
 
+
 function changePlayers(value) {
+
     playerCount += value;
-    if(playerCount < 4) playerCount = 4;
-    if(playerCount > 20) playerCount = 20;
-    document.getElementById("playerNumber").textContent = playerCount;
+
+    if (playerCount < 4)
+        playerCount = 4;
+
+    if (playerCount > 20)
+        playerCount = 20;
+
+    document
+        .getElementById("playerNumber")
+        .textContent = playerCount;
 }
 
+
 function showRoles() {
+
     createRoleList();
+
     showScreen("roles");
 }
 
+
+/* РОЛІ */
+
 function createRoleList() {
-    const list = document.getElementById("roleList");
+
+    const list =
+        document.getElementById("roleList");
+
     list.innerHTML = "";
 
     Object.keys(roles).forEach(key => {
-        if(roleCounts[key] === undefined) roleCounts[key] = 0;
+
+        if (roleCounts[key] === undefined)
+            roleCounts[key] = 0;
+
         const role = roles[key];
-        const row = document.createElement("div");
+
+        const row =
+            document.createElement("div");
+
         row.className = "role-row";
+
         row.innerHTML = `
+
             <div class="role-info">
-                <div class="role-name">${role.name}</div>
+
+                <div class="role-name">
+                    ${role.name}
+                </div>
+
             </div>
+
             <div class="role-controls">
-                <button onclick="changeRole('${key}', -1)">−</button>
-                <div id="count-${key}" class="role-count">${roleCounts[key]}</div>
-                <button onclick="changeRole('${key}', 1)">+</button>
+
+                <button
+                    onclick="changeRole('${key}', -1)">
+                    −
+                </button>
+
+                <div
+                    id="count-${key}"
+                    class="role-count">
+                    ${roleCounts[key]}
+                </div>
+
+                <button
+                    onclick="changeRole('${key}', 1)">
+                    +
+                </button>
+
             </div>
+
         `;
+
         list.appendChild(row);
+
     });
 
     updateTotal();
 }
 
-function changeRole(key, value) {
-    let current = roleCounts[key] || 0;
-    let total = getTotalRoles();
 
-    if(value > 0 && total >= playerCount) {
-        document.getElementById("roleError").textContent = `Максимум ${playerCount} ролей.`;
+function changeRole(key, value) {
+
+    let current =
+        roleCounts[key] || 0;
+
+    let total =
+        getTotalRoles();
+
+    if (value > 0 && total >= playerCount) {
+
+        document
+            .getElementById("roleError")
+            .textContent =
+            `Максимум ${playerCount} ролей.`;
+
         return;
     }
 
     current += value;
-    if(current < 0) current = 0;
-    if(current > 20) current = 20;
+
+    if (current < 0)
+        current = 0;
+
+    if (current > 20)
+        current = 20;
 
     roleCounts[key] = current;
-    document.getElementById("count-" + key).textContent = current;
-    document.getElementById("roleError").textContent = "";
+
+    document
+        .getElementById("count-" + key)
+        .textContent = current;
+
+    document
+        .getElementById("roleError")
+        .textContent = "";
+
     updateTotal();
 }
 
+
 function getTotalRoles() {
-    return Object.values(roleCounts).reduce((sum, value) => sum + value, 0);
+
+    return Object
+        .values(roleCounts)
+        .reduce(
+            (sum, value) => sum + value,
+            0
+        );
 }
+
 
 function updateTotal() {
-    let total = getTotalRoles();
-    document.getElementById("totalRoles").textContent = `${total} / ${playerCount}`;
+
+    let total =
+        getTotalRoles();
+
+    document
+        .getElementById("totalRoles")
+        .textContent =
+        `${total} / ${playerCount}`;
 }
 
+
+/* ІМЕНА */
+
 function showNames() {
-    let total = getTotalRoles();
-    if(total !== playerCount) {
-        document.getElementById("roleError").textContent = `Виберіть рівно ${playerCount} ролей (зараз ${total}).`;
+
+    let total =
+        getTotalRoles();
+
+    if (total !== playerCount) {
+
+        document
+            .getElementById("roleError")
+            .textContent =
+            `Виберіть рівно ${playerCount} ролей (зараз ${total}).`;
+
         return;
     }
 
-    const list = document.getElementById("namesList");
+    const list =
+        document.getElementById("namesList");
+
     list.innerHTML = "";
 
-    for(let i = 0; i < playerCount; i++) {
+    for (
+        let i = 0;
+        i < playerCount;
+        i++
+    ) {
+
         list.innerHTML += `
+
             <div class="player">
-                <div class="player-number">${i + 1}.</div>
-                <input id="name${i}" type="text" placeholder="Ім'я гравця ${i + 1}">
+
+                <div class="player-number">
+                    ${i + 1}.
+                </div>
+
+                <input
+                    id="name${i}"
+                    type="text"
+                    placeholder="Ім'я гравця ${i + 1}">
+
             </div>
+
         `;
     }
+
     showScreen("names");
 }
 
+
+/* РОЗДАЧА */
+
 function startDeal() {
+
     players = [];
-    for(let i = 0; i < playerCount; i++) {
-        let name = document.getElementById("name" + i).value.trim();
-        if(!name) name = "Козак " + (i + 1);
-        players.push({ name: name, role: null, alive: true });
+
+    for (
+        let i = 0;
+        i < playerCount;
+        i++
+    ) {
+
+        let name =
+            document
+                .getElementById("name" + i)
+                .value
+                .trim();
+
+        if (!name)
+            name = "Козак " + (i + 1);
+
+        players.push({
+
+            name: name,
+            role: null,
+            alive: true
+
+        });
+
     }
 
+
     let deck = [];
-    Object.keys(roleCounts).forEach(key => {
-        for(let i = 0; i < roleCounts[key]; i++) {
-            deck.push(key);
-        }
-    });
+
+    Object.keys(roleCounts)
+        .forEach(key => {
+
+            for (
+                let i = 0;
+                i < roleCounts[key];
+                i++
+            ) {
+
+                deck.push(key);
+
+            }
+
+        });
+
 
     shuffle(deck);
-    players.forEach((player, index) => {
-        player.role = deck[index];
-    });
+
+
+    players.forEach(
+        (player, index) => {
+
+            player.role =
+                deck[index];
+
+        }
+    );
+
 
     currentPlayer = 0;
+
     prepareCard();
+
     showScreen("deal");
 }
 
+
 function shuffle(array) {
-    for(let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+
+    for (
+        let i = array.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        let j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            array[i],
+            array[j]
+        ] = [
+            array[j],
+            array[i]
+        ];
+
     }
+
 }
+
+
+/* КАРТКИ */
 
 function prepareCard() {
-    let player = players[currentPlayer];
-    document.getElementById("dealPlayer").textContent = `${player.name} (${currentPlayer + 1} з ${playerCount})`;
-    document.getElementById("progressBar").style.width = `${(currentPlayer / playerCount) * 100}%`;
 
-    document.getElementById("closedCard").classList.remove("hidden");
-    document.getElementById("openCard").classList.add("hidden");
+    let player =
+        players[currentPlayer];
 
-    document.getElementById("showButton").classList.remove("hidden");
-    document.getElementById("hideButton").classList.add("hidden");
-    document.getElementById("nextButton").classList.add("hidden");
+    document
+        .getElementById("dealPlayer")
+        .textContent =
+        `${player.name} (${currentPlayer + 1} з ${playerCount})`;
 
-    document.getElementById("nextButton").textContent = currentPlayer === playerCount - 1 ? "ПОЧАТИ ГРУ" : "ПЕРЕДАТИ НАСТУПНОМУ →";
+    document
+        .getElementById("progressBar")
+        .style.width =
+        `${(currentPlayer / playerCount) * 100}%`;
+
+
+    document
+        .getElementById("closedCard")
+        .classList
+        .remove("hidden");
+
+    document
+        .getElementById("openCard")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("showButton")
+        .classList
+        .remove("hidden");
+
+    document
+        .getElementById("hideButton")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("nextButton")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("nextButton")
+        .textContent =
+        currentPlayer === playerCount - 1
+            ? "ПОЧАТИ ГРУ"
+            : "ПЕРЕДАТИ НАСТУПНОМУ →";
 }
+
 
 function showRole() {
-    let player = players[currentPlayer];
-    let role = roles[player.role];
 
-    let openCard = document.getElementById("openCard");
-    openCard.style.backgroundImage = `url('${role.image}')`;
+    let player =
+        players[currentPlayer];
 
-    document.getElementById("roleTitle").textContent = role.name;
-    document.getElementById("roleDescription").textContent = role.description;
+    let role =
+        roles[player.role];
 
-    document.getElementById("closedCard").classList.add("hidden");
-    openCard.classList.remove("hidden");
 
-    document.getElementById("showButton").classList.add("hidden");
-    document.getElementById("hideButton").classList.remove("hidden");
+    let openCard =
+        document.getElementById("openCard");
+
+    openCard.style.backgroundImage =
+        `url('${role.image}')`;
+
+
+    document
+        .getElementById("roleTitle")
+        .textContent =
+        role.name;
+
+    document
+        .getElementById("roleDescription")
+        .textContent =
+        role.description;
+
+
+    document
+        .getElementById("closedCard")
+        .classList
+        .add("hidden");
+
+    openCard
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("showButton")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("hideButton")
+        .classList
+        .remove("hidden");
 }
+
 
 function hideRole() {
-    document.getElementById("openCard").classList.add("hidden");
-    document.getElementById("closedCard").classList.remove("hidden");
-    document.getElementById("hideButton").classList.add("hidden");
-    document.getElementById("nextButton").classList.remove("hidden");
+
+    document
+        .getElementById("openCard")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("closedCard")
+        .classList
+        .remove("hidden");
+
+    document
+        .getElementById("hideButton")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("nextButton")
+        .classList
+        .remove("hidden");
 }
 
+
 function nextPlayer() {
-    if(currentPlayer < playerCount - 1) {
+
+    if (currentPlayer < playerCount - 1) {
+
         currentPlayer++;
+
         prepareCard();
+
     } else {
+
         showScreen("startGame");
+
     }
 }
 
+
 /* НІЧ */
+
 const nightActions = [
-    { key: "characternik", name: "Козак-характерник (Мафія)", text: "Мафія прокидається та обирає жертву." },
-    { key: "homeless", name: "Безхатько", text: "Безхатько приходить у гості до одного гравця та блокує його здатність." },
-    { key: "molfar", name: "Мольфар", text: "Мольфар прокидається та обирає, кого врятувати." },
-    { key: "cossack", name: "Козак", text: "Козак прокидається та перевіряє одного гравця." },
-    { key: "scary", name: "Страшко", text: "Страшко прокидається та обирає будь-якого гравця." },
-    { key: "priest", name: "Священик", text: "Священик може використати свій імунітет. Здібність доступна раз на два кола." }
+
+    {
+        key: "characternik",
+        name: "Козак-характерник (Мафія)",
+        text: "Мафія прокидається та обирає жертву."
+    },
+
+    {
+        key: "homeless",
+        name: "Безхатько",
+        text: "Безхатько приходить у гості до одного гравця та блокує його здатність."
+    },
+
+    {
+        key: "molfar",
+        name: "Мольфар",
+        text: "Мольфар прокидається та обирає, кого врятувати."
+    },
+
+    {
+        key: "cossack",
+        name: "Козак",
+        text: "Козак прокидається та перевіряє одного гравця."
+    },
+
+    {
+        key: "scary",
+        name: "Страшко",
+        text: "Страшко прокидається та обирає будь-якого гравця."
+    },
+
+    {
+        key: "priest",
+        name: "Священик",
+        text: "Священик може використати свій імунітет. Здібність доступна раз на два кола."
+    }
+
 ];
 
+
 function startNight() {
+
     nightStep = 0;
+
     updateNight();
+
     showScreen("night");
 }
 
+
 function updateNight() {
-    let action = nightActions[nightStep];
-    let role = roles[action.key];
 
-    document.getElementById("nightNumber").textContent = "Ніч " + nightNumber;
-    document.getElementById("nightAction").innerHTML = `
-        <h3>${action.name}</h3>
-        <p>${action.text}</p>
-    `;
+    let action =
+        nightActions[nightStep];
 
-    document.getElementById("nightButton").textContent = nightStep === nightActions.length - 1 ? "ЗУСТРІЧАЙМО РАНОК" : "ГОТОВО →";
+    document
+        .getElementById("nightNumber")
+        .textContent =
+        "Ніч " + nightNumber;
+
+    document
+        .getElementById("nightAction")
+        .innerHTML = `
+
+            <h3>
+                ${action.name}
+            </h3>
+
+            <p>
+                ${action.text}
+            </p>
+
+        `;
+
+
+    document
+        .getElementById("nightButton")
+        .textContent =
+        nightStep === nightActions.length - 1
+            ? "ЗУСТРІЧАЙМО РАНОК"
+            : "ГОТОВО →";
 }
 
+
 function nextNight() {
-    if(nightStep < nightActions.length - 1) {
+
+    if (
+        nightStep <
+        nightActions.length - 1
+    ) {
+
         nightStep++;
+
         updateNight();
+
     } else {
+
         showMorning();
+
     }
 }
 
+
+/* РАНОК */
+
 function showMorning() {
-    document.getElementById("morningNumber").textContent = "Ранок " + nightNumber;
+
+    document
+        .getElementById("morningNumber")
+        .textContent =
+        "Ранок " + nightNumber;
+
     showScreen("morning");
 }
 
+
+/* ОБГОВОРЕННЯ */
+
 function startDiscussion() {
-    document.getElementById("discussionNumber").textContent = "День " + nightNumber;
+
+    document
+        .getElementById("discussionNumber")
+        .textContent =
+        "День " + nightNumber;
+
     showScreen("discussion");
 }
 
-function startVoting() {
-    const list = document.getElementById("votingList");
-    list.innerHTML = "";
-    document.getElementById("votingNumber").textContent = "День " + nightNumber;
 
-    players.forEach((player, index) => {
-        if(!player.alive) return;
-        list.innerHTML += `
-            <div class="vote">
-                <span>${player.name}</span>
-                <button class="red" onclick="eliminate(${index})">ВИГНАТИ</button>
-            </div>
-        `;
-    });
+/* ГОЛОСУВАННЯ */
+
+function startVoting() {
+
+    const list =
+        document.getElementById("votingList");
+
+    list.innerHTML = "";
+
+    document
+        .getElementById("votingNumber")
+        .textContent =
+        "День " + nightNumber;
+
+
+    players.forEach(
+        (player, index) => {
+
+            if (!player.alive)
+                return;
+
+            list.innerHTML += `
+
+                <div class="vote">
+
+                    <span>
+                        ${player.name}
+                    </span>
+
+                    <button
+                        class="red"
+                        onclick="eliminate(${index})">
+                        ВИГНАТИ
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+    );
+
 
     showScreen("voting");
 }
 
-function eliminate(index) {
-    players[index].alive = false;
-    alert(players[index].name + " вибув із гри.");
 
-    if(checkWinner()) return;
+/* ВИБУТТЯ ГРАВЦЯ */
+
+function eliminate(index) {
+
+    players[index].alive = false;
+
+    alert(
+        players[index].name +
+        " вибув із гри."
+    );
+
+
+    /*
+     * ПЕРЕВІРЯЄМО ПЕРЕМОГУ ПІСЛЯ ВИГНАННЯ.
+     *
+     * Гра завершиться тільки якщо:
+     *
+     * 1. Не залишилося жодного
+     *    Козака-характерника.
+     *
+     * АБО
+     *
+     * 2. Серед живих залишилися
+     *    тільки Козаки-характерники.
+     */
+
+    if (checkWinner())
+        return;
+
+
+    /*
+     * Якщо переможця немає,
+     * гра продовжується.
+     */
 
     nightNumber++;
+
     startNight();
 }
 
+
+/* ПЕРЕВІРКА ПЕРЕМОГИ */
+
 function checkWinner() {
-    let alive = players.filter(player => player.alive);
-    let characterknyky = alive.filter(player => player.role === "characternik");
-    let scary = alive.filter(player => player.role === "scary");
 
-    let mavkaDead = players.some(player => player.role === "mavka" && !player.alive);
+    const alive =
+        players.filter(
+            player => player.alive
+        );
 
-    if(mavkaDead) {
-        showEnd("МАВКА ПЕРЕМОГЛА!", "Мавка домоглася свого вигнання під час голосування.");
+
+    const characterknyky =
+        alive.filter(
+            player =>
+                player.role === "characternik"
+        );
+
+
+    /*
+     * ПЕРЕМОГА ІНШИХ РОЛЕЙ
+     *
+     * Усі Козаки-характерники
+     * вибули.
+     */
+
+    if (characterknyky.length === 0) {
+
+        showEnd(
+            "КОЗАКИ ПЕРЕМОГЛИ!",
+            "Усі козаки-характерники вибули з гри."
+        );
+
         return true;
     }
 
-    if(characterknyky.length === 0 && scary.length === 0) {
-        showEnd("КОЗАКИ ПЕРЕМОГЛИ!", "Мафія та Страшко вибули з гри.");
+
+    /*
+     * ПЕРЕМОГА КОЗАКІВ-ХАРАКТЕРНИКІВ
+     *
+     * Усі живі гравці є
+     * Козаками-характерниками.
+     *
+     * Тобто всі інші ролі
+     * вибули з гри.
+     */
+
+    if (
+        alive.length > 0 &&
+        alive.length === characterknyky.length
+    ) {
+
+        showEnd(
+            "КОЗАКИ-ХАРАКТЕРНИКИ ПЕРЕМОГЛИ!",
+            "Усі інші ролі вибули з гри."
+        );
+
         return true;
     }
 
-    if(characterknyky.length > 0 && characterknyky.length >= alive.length - characterknyky.length) {
-        showEnd("МАФІЯ ПЕРЕМОГЛА!", "Мафія отримала більшість.");
-        return true;
-    }
 
-    if(alive.length === 1 && scary.length === 1) {
-        showEnd("СТРАШКО ПЕРЕМІГ!", "Страшко залишився останнім живим.");
-        return true;
-    }
+    /*
+     * Якщо обидві команди ще мають
+     * живих гравців — гра триває.
+     */
 
     return false;
 }
 
+
+/* КІНЕЦЬ ГРИ */
+
 function showEnd(title, text) {
-    document.getElementById("winnerTitle").textContent = title;
-    document.getElementById("winnerText").textContent = text;
+
+    document
+        .getElementById("winnerTitle")
+        .textContent = title;
+
+    document
+        .getElementById("winnerText")
+        .textContent = text;
+
     showScreen("end");
 }
 
+
+/* НОВА ГРА */
+
 function newGame() {
+
     players = [];
+
     roleCounts = {};
+
     currentPlayer = 0;
+
     nightNumber = 1;
+
     nightStep = 0;
+
     showScreen("home");
 }
+
 </script>
 
 </body>
