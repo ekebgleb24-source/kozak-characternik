@@ -463,6 +463,14 @@ input {
 
 .notes-overlay.open {
     display: flex;
+    pointer-events: auto;
+}
+
+.notes-panel,
+.notes-textarea,
+.notes-actions,
+.notes-actions button {
+    pointer-events: auto;
 }
 
 .notes-panel {
@@ -500,6 +508,10 @@ input {
 }
 
 .notes-textarea {
+    pointer-events: auto;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    touch-action: auto;
     width: 100%;
     min-height: 260px;
     resize: none;
@@ -551,7 +563,7 @@ input {
         <div class="notes-panel">
             <div class="notes-header">
                 <h2>📝 Нотатки ведучого</h2>
-                <button class="notes-close" onclick="closeNotes()">✕</button>
+                <button type="button" class="notes-close" onclick="closeNotes()">✕</button>
             </div>
 
             <textarea
@@ -561,8 +573,8 @@ input {
                 oninput="saveNotes()"></textarea>
 
             <div class="notes-actions">
-                <button class="notes-clear" onclick="clearNotes()">ОЧИСТИТИ</button>
-                <button onclick="closeNotes()">ЗАКРИТИ</button>
+                <button type="button" class="notes-clear" onclick="clearNotes()">ОЧИСТИТИ</button>
+                <button type="button" onclick="closeNotes()">ЗАКРИТИ</button>
             </div>
         </div>
     </div>
